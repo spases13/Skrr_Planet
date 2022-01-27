@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <!-- <div class="loader">
+            <p></p>
+            <button>Button</button>
+        </div> -->
+        <h1>Look a this !</h1>
+        <div class="planet">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Ice_planet.png" alt="">
+            <div class="obj"></div>
+        </div>
+
+    </body>
+
+    <script>
+        const body = document.body;
+        const loader = document.querySelector('.loader');
+        const msg = document.querySelector('.loader p');
+        const button = document.querySelector('.loader button');
+        let count = 0;
+
+        for (let i = 0; i < 1500; i++) {
+            if(i%53 === 0) document.body.appendChild(document.createElement('br'));
+            let turn = document.createElement('span');
+            turn.innerText = "turn";
+            document.body.appendChild(turn);
+        }
+
+        msg.textContent = "kliki bzafe dl mraat 3la button";
+
+        button.addEventListener('click', _ => {
+            count++;
+            console.log(count);
+
+            if (count === 20) msg.textContent = "Ziiid zid mabqa waloo !";
+
+
+            if (count === 50) msg.textContent = "Qrrbtyy !!"
+
+
+            if (count === 80) {
+                msg.textContent = "Baraaka eliik hhhhh yalah wait 5sec";
+                setTimeout(_ => {
+                    loader.style.display = 'none';
+
+                }, 5000);
+            }
+        });
+
+
+        setTimeout(_ => {
+            if (count === 0)
+                loader.style.display = 'none';
+        }, 7000);
+
+
+
+    </script>
+
+</html>

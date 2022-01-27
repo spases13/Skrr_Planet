@@ -1,0 +1,99 @@
+body {
+	background-color: black;
+	color: white;
+	height: 100%;
+	width: 100%;
+	white-space: normal;
+	margin: 0;
+	overflow: hidden;
+}
+
+span {
+	color: teal;
+}
+
+span:nth-child(2n + 1) {
+	color: green;
+}
+
+.obj {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 0 10px 5px rgba(0, 79, 248, 0.418);
+	position: absolute;
+	right: calc(50%);
+	top: -10px;
+	transform-origin: 100% 210px;
+	animation: turn-around 4s linear 0.3s infinite;
+}
+
+.planet {
+	position: absolute;
+	border-radius: 50%;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	outline: 1px solid red;
+	background-color: rgba(240, 255, 255, 0.411);
+	z-index: 9;
+    animation: opacity alternate 10s infinite ease;
+}
+
+img {
+	height: 400px;
+}
+
+.loader {
+	display: grid;
+	place-items: center;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'consolas', serif;
+	background-color: brown;
+	z-index: 10;
+	font-size: 3rem;
+}
+
+button {
+	height: 50px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	font-size: 2rem;
+	width: 150px;
+	cursor: pointer;
+}
+
+button:active {
+	transition: 0.2s;
+	transform: scale(0.95);
+}
+
+@keyframes turn-around {
+	0% {
+		background-color: white;
+		transform: rotate(0deg);
+	}
+
+	50% {
+		background-color: rgb(51, 255, 0);
+	}
+
+	100% {
+		background-color: white;
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes opacity {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
